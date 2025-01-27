@@ -1,0 +1,20 @@
+name: common
+description: 'Shared "common" package'
+version: 0.0.1
+
+environment:
+  sdk: ^3.6.1
+  flutter: ">=1.17.0"
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0

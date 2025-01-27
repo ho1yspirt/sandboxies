@@ -1,0 +1,25 @@
+name: sandboxies
+description: "This is a Flutter monorepo. Collection of multiple Flutter apps and shared packages"
+publish_to: "none"
+
+environment:
+  sdk: ^3.6.1
+  flutter: ">=1.17.0"
+
+workspace:
+  - packages/common
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: 0.19.0
+  collection: 0.19.0
+  async: 2.11.0
+  meta: 1.15.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
