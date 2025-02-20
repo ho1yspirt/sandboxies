@@ -1,16 +1,13 @@
-name: sandboxies
-description: "This is a Flutter monorepo. Collection of multiple Flutter apps and shared packages"
+name: starty
+description: "Starty"
 publish_to: "none"
+version: 0.1.0
 
 environment:
   sdk: ^3.7.0
   flutter: ">=1.17.0"
 
-workspace:
-  - apps/starty
-
-  - packages/app_utils
-  - packages/initialization
+resolution: workspace
 
 dependencies:
   flutter:
@@ -23,9 +20,19 @@ dependencies:
   async: ^2.12.0
   meta: ^1.16.0
 
+  l: ^5.0.0
+
+  app_utils:
+    path: ../../packages/app_utils
+  initialization:
+    path: ../../packages/initialization
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
+
+flutter:
+  uses-material-design: true

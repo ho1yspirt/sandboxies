@@ -1,0 +1,43 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    # Build
+    - "build/**"
+    # Tests
+    - "test/**.mocks.dart"
+    - ".test_coverage.dart"
+    - "coverage/**"
+    # Assets
+    - "assets/**"
+    # Generated
+    - "**.g.dart"
+    - "**.gql.dart"
+    - "**.freezed.dart"
+    - "**.config.dart"
+    - "**.mocks.dart"
+    - "**.gen.dart"
+    - "**.pb.dart"
+    - "**.pbenum.dart"
+    - "**.pbjson.dart"
+    # Flutter Version Manager
+    - ".fvm/**"
+    # Tools
+    - "tool/**"
+    - "scripts/**"
+    - ".dart_tool/**"
+    # Platform
+    - "ios/**"
+    - "android/**"
+    - "web/**"
+    - "macos/**"
+    - "windows/**"
+    - "linux/**"
+
+linter:
+  rules:
+    # Enabled
+    sort_constructors_first: true
+    prefer_const_constructors: true
+    # Disabled
+    prefer_constructors_over_static_methods: false

@@ -1,9 +1,9 @@
-name: common
-description: 'Shared "common" package'
+name: app_utils
+description: 'Shared "app_utils" package'
 version: 0.0.1
 
 environment:
-  sdk: ^3.6.1
+  sdk: ^3.7.0
   flutter: ">=1.17.0"
 
 resolution: workspace
@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+
+  l: ^5.0.0
 
 dev_dependencies:
   flutter_test:
