@@ -34,12 +34,12 @@ Future<void> _confifure() => app_utils.runTimeLoggedAsync(() async {
   widgetsBinding.allowFirstFrame();
 }, name: '_configure');
 
-Future<void> run() async {
+Future<void> run() => app_utils.runTimeLoggedAsync(() async {
   final initProgress = ValueNotifier((percent: 0, message: ''));
   final container = Dependencies();
 
   await initialization.loadLibrary();
-  initialization.initializeApp(
+  await initialization.initializeApp(
     configuration: _confifure,
     container: () => container,
     initializationProcess: initializationProcesss,
@@ -59,4 +59,4 @@ Future<void> run() async {
       runApp(error_app.ErrorApp(error: error));
     },
   );
-}
+}, name: 'run');

@@ -41,8 +41,20 @@ class _StartySplashState extends State<StartySplash> {
   /* #endregion */
 
   @override
-  Widget build(BuildContext context) => const Directionality(
+  Widget build(BuildContext context) => Directionality(
     textDirection: TextDirection.ltr,
-    child: Placeholder(),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        // TODO (Amir Asake): Add logo widget for Starty app's splash
+        ValueListenableBuilder(
+          valueListenable: widget.initProgress,
+          builder:
+              (context, progress, _) =>
+                  Text('${progress.percent}% | ${progress.message}'),
+        ),
+      ],
+    ),
   );
 }
