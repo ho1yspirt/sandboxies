@@ -15,5 +15,5 @@ final class AppDependencies {
 
   late final String name;
 
-  late final AppRouter router;
+  late final AppRouting routing;
 }

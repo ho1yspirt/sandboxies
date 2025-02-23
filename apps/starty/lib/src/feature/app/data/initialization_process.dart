@@ -7,5 +7,5 @@ final InitializationProcess<Dependencies> initializationProcesss = {
   'Initialize app dependencies':
       (container) => container.app = AppDependencies(),
   'Set app name': (container) => container.app.name = 'Starty',
-  'Set app router': (container) => container.app.router = AppRouter(),
+  'Set app router': (container) => container.app.routing = AppRouting(),
 };

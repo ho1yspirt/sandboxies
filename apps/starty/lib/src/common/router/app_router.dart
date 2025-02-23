@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:octopus/octopus.dart';
 import 'package:starty/src/common/router/app_route.dart';
 
-/// {@template app_router}
-/// AppRouter.
+/// {@template app_routing}
+/// AppRouting.
 /// {@endtemplate}
-final class AppRouter {
-  /// {@macro app_router}
-  AppRouter() {
+final class AppRouting {
+  /// {@macro app_routing}
+  AppRouting() {
     router = Octopus(
       routes: AppRoute.values,
       defaultRoute: AppRoute.home,
