@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:starty/src/common/router/app_router.dart';
 import 'package:starty/src/feature/app/widget/inherited_dependencies.dart';
 
 /// {@template app_dependencies}
@@ -13,4 +14,6 @@ final class AppDependencies {
   AppDependencies();
 
   late final String name;
+
+  late final AppRouter router;
 }
