@@ -21,6 +21,7 @@ dependencies:
   meta: ^1.16.0
 
   l: ^5.0.0
+  octopus: ^0.0.9
 
   app_utils:
     path: ../../packages/app_utils
