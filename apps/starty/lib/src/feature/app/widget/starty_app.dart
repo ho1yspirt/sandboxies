@@ -19,7 +19,7 @@ class StartyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      InheritedDependencies(dependencies: dependencies, child: _App());
+      InheritedDependencies(dependencies: dependencies, child: const _App());
 }
 
 class _App extends StatefulWidget {
@@ -42,8 +42,8 @@ class __AppState extends State<_App> {
           data: MediaQuery.of(
             context,
           ).copyWith(textScaler: TextScaler.noScaling),
-          child: child ?? ErrorScreen(),
+          child: child ?? const ErrorScreen(),
         ),
-    home: HomeScreen(),
+    home: const HomeScreen(),
   );
 }
