@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
   });
 
   /// Screen route name
-  static const name = 'HomeScreen';
+  static const name = 'home';
+
+  /// Screen route title
+  static const title = 'Home';
 
   @override
   Widget build(BuildContext context) => Scaffold(
