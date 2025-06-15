@@ -1,14 +1,13 @@
 import 'dart:async';
 
+import 'package:app_shared/src/initialization/common/type.dart';
+import 'package:app_shared/src/initialization/data/initialize_dependencies.dart';
 import 'package:flutter/widgets.dart';
-import 'package:initialization/src/common/type.dart';
-import 'package:initialization/src/data/initialize_dependencies.dart';
 
 Future<void> initializeApp<T>({
   required T Function() container,
   required InitializationProcess<T> initializationProcess,
   required FutureOr<void> Function(T dependencies) onSuccess,
-
   Future<void> Function()? configuration,
   Widget? splash,
   void Function(InitializationProgress progress)? onProgress,

@@ -1,5 +1,5 @@
-import 'package:initialization/src/common/exception.dart';
-import 'package:initialization/src/common/type.dart';
+import 'package:app_shared/src/initialization/common/exception.dart';
+import 'package:app_shared/src/initialization/common/type.dart';
 
 Future<T> initializeDependencies<T>({
   required T Function() container,

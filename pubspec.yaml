@@ -10,8 +10,7 @@ workspace:
   # Projects
   - apps/starty
   # Packages
-  - packages/app_utils
-  - packages/initialization
+  - packages/app_shared
 
 dependencies:
   flutter:

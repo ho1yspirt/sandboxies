@@ -21,10 +21,8 @@ dependencies:
   intl: ^0.20.2
   meta: ^1.16.0
   # Monorepository shared packages
-  app_utils:
-    path: ../../packages/app_utils
-  initialization:
-    path: ../../packages/initialization
+  app_shared:
+    path: ../../packages/app_shared
   # Internal
   l: ^5.0.0
   # Persistent and data

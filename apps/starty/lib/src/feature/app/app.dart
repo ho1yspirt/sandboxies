@@ -1,21 +1,21 @@
 import 'dart:ui';
 
+import 'package:app_shared/initialization.dart' deferred as initialization;
+import 'package:app_shared/utils.dart' as app_utils;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:initialization/initialization.dart' deferred as initialization;
 import 'package:l/l.dart';
-import 'package:starty/src/feature/app/data/model/dependencies.dart';
 import 'package:starty/src/feature/app/data/initialization_process.dart';
+import 'package:starty/src/feature/app/data/model/dependencies.dart';
 import 'package:starty/src/feature/app/widget/error_app.dart'
     deferred as error_app;
 import 'package:starty/src/feature/app/widget/starty_app.dart'
     deferred as starty;
 import 'package:starty/src/feature/app/widget/starty_splash.dart';
-import 'package:app_utils/app_utils.dart' as app_utils;
 
 Future<void> _confifure() => app_utils.runTimeLoggedAsync(() async {
-  final widgetsBinding =
-      WidgetsFlutterBinding.ensureInitialized()..deferFirstFrame();
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized()
+    ..deferFirstFrame();
 
   final sourcePlatformDispatcherError = PlatformDispatcher.instance.onError;
   PlatformDispatcher.instance.onError = (error, stackTrace) {

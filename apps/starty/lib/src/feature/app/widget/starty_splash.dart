@@ -1,5 +1,5 @@
+import 'package:app_shared/initialization.dart';
 import 'package:flutter/material.dart';
-import 'package:initialization/initialization.dart';
 
 /// {@template starty_splash}
 /// StartySplash widget.
@@ -50,9 +50,8 @@ class _StartySplashState extends State<StartySplash> {
         // TODO (Amir Asake): Add logo widget for Starty app's splash
         ValueListenableBuilder(
           valueListenable: widget.initProgress,
-          builder:
-              (context, progress, _) =>
-                  Text('${progress.percent}% | ${progress.message}'),
+          builder: (context, progress, _) =>
+              Text('${progress.percent}% | ${progress.message}'),
         ),
       ],
     ),
