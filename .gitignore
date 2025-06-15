@@ -45,6 +45,7 @@
 **/build/
 
 # Project related
-**config/
+# Uncomment line below to hide all config folders with config files. Only for example.
+# **config/
 # TODO (Amir Asake): Sometimes intl generates l10n in root dir. Fix this, then delete "lib/"
 /lib/
