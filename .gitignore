@@ -1,26 +1,50 @@
+# Miscellaneous
+**.class
+**.log
+**.pyc
+**.swp
+**.DS_Store
+**.atom/
+**.build/
+**.buildlog/
+**.history
+**.svn/
+**.swiftpm/
+**.metadata
+**migrate_working_dir/
 
-# Flutter/Dart/Pub related
-**/build/
-**/ios/Flutter/Flutter.framework
-**/ios/Flutter/Flutter.podspec
-**/ios/Flutter/engine
-**/ios/Flutter/flutter_assets
-**/ios/Pods/
-**/.dart_tool/
-**/.packages
-**/.flutter-plugins
-**/.flutter-plugins-dependencies
-**/.metadata
+# IntelliJ related
+**.iml
+**.ipr
+**.iws
+**.idea/
+
+# Android Studio will place build artifacts here
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+
+# Symbolication related
+**app.*.symbols
+
+# Obfuscation related
+**app.*.map.json
 
 # FVM Version Cache
-.fvm/
+**.fvm/
+**.fvmrc
 
-# VS Code
-.vscode/
-.idea/
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+**/build/
 
-# Mac/Linux/Windows
-.DS_Store
-*.log
-*.iml
-
+# Project related
+**config/
+# TODO (Amir Asake): Sometimes intl generates l10n in root dir. Fix this, then delete "lib/"
+/lib/

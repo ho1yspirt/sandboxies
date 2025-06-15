@@ -1,0 +1,75 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Starty dev (debug)",
+            "request": "launch",
+            "type": "dart",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        },
+        {
+            "name": "Starty dev (profile)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        },
+        {
+            "name": "Starty dev (release)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        },
+        {
+            "name": "Starty (debug)",
+            "request": "launch",
+            "type": "dart",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        },
+        {
+            "name": "Starty (profile)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        },
+        {
+            "name": "Starty (release)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "apps/starty/lib/main.dart",
+            "args": [
+                "--target",
+                "lib/main.dart",
+                "--dart-define-from-file=config/dev.json"
+            ]
+        }
+    ]
+}
