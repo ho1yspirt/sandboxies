@@ -3,12 +3,13 @@ description: "This is a Flutter monorepo. Collection of multiple Flutter apps an
 publish_to: "none"
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0
   flutter: ">=1.17.0"
 
 workspace:
+  # Projects
   - apps/starty
-
+  # Packages
   - packages/app_utils
   - packages/initialization
 
@@ -18,14 +19,24 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  intl: ^0.19.0
-  collection: ^1.19.1
+  # dart
   async: ^2.12.0
+  collection: ^1.19.1
+  intl: ^0.20.2
   meta: ^1.16.0
+  # Internal
+
+  # Plugins and native
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   build_runner: ^2.4.15
+
+flutter:
+  generate: true
+
+flutter_intl:
+  enabled: true

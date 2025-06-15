@@ -10,16 +10,13 @@ import 'package:starty/src/feature/home/widget/screen/home_screen.dart';
 /// {@endtemplate}
 class StartyApp extends StatelessWidget {
   /// {@macro starty_app}
-  const StartyApp({
-    super.key, // ignore: unused_element
-    required this.dependencies,
-  });
+  const StartyApp({super.key, required this.dependencies});
 
   final Dependencies dependencies;
 
   @override
   Widget build(BuildContext context) =>
-      InheritedDependencies(dependencies: dependencies, child: _App());
+      InheritedDependencies(dependencies: dependencies, child: const _App());
 }
 
 class _App extends StatefulWidget {
@@ -36,14 +33,11 @@ class __AppState extends State<_App> {
   @override
   Widget build(BuildContext context) => MaterialApp(
     title: AppDependencies.of(context).name,
-    builder:
-        (context, child) => MediaQuery(
-          key: builderKey,
-          data: MediaQuery.of(
-            context,
-          ).copyWith(textScaler: TextScaler.noScaling),
-          child: child ?? ErrorScreen(),
-        ),
-    home: HomeScreen(),
+    builder: (context, child) => MediaQuery(
+      key: builderKey,
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
+      child: child ?? const ErrorScreen(),
+    ),
+    home: const HomeScreen(),
   );
 }
