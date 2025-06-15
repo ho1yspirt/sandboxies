@@ -4,7 +4,7 @@ publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0
   flutter: ">=1.17.0"
 
 resolution: workspace
@@ -15,24 +15,43 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  intl: ^0.19.0
-  collection: ^1.19.1
+  # dart
   async: ^2.12.0
+  collection: ^1.19.1
+  intl: ^0.20.2
   meta: ^1.16.0
-
+  # Monorepository shared packages
+  app_shared:
+    path: ../../packages/app_shared
+  # Internal
   l: ^5.0.0
+  # Persistent and data
+  shared_preferences: ^2.5.3
+  # Plugins and native
+  flutter_displaymode: 0.6.0
+  window_manager: ^0.5.0
+  # Presentation and ui
+  material_symbols_icons: ^4.2815.1
 
-  app_utils:
-    path: ../../packages/app_utils
-  initialization:
-    path: ../../packages/initialization
+  # Services integration
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^6.0.0
 
-  flutter_lints: ^5.0.0
   build_runner: ^2.4.15
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+
+flutter_intl:
+  enabled: true
+  use_deferred_loading: false
+  class_name: StartyL10n
+  main_locale: en
+  arb_dir: lib/src/_internal/localization/l10n
+  output_dir: lib/src/_internal/localization/generated

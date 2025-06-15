@@ -1,0 +1,35 @@
+name: app_shared
+description: 'The "app_shared" package with shared code across all apps in monorepository'
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # dart
+  async: ^2.12.0
+  collection: ^1.19.1
+  meta: ^1.16.0
+  # internal
+  bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
+  l: ^5.0.0
+  # persistent and data
+  shared_preferences: ^2.5.3
+  # plugins and native
+  window_manager: ^0.5.0
+  # presentation and ui
+  material_symbols_icons: ^4.2815.1
+  # services integration
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

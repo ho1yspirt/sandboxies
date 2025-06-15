@@ -1,4 +1,4 @@
-import 'package:app_utils/app_utils.dart';
-import 'package:starty/src/feature/app/app.dart' as app;
+import 'package:app_shared/utils.dart';
+import 'package:starty/src/app/app.dart' as app;
 
-main() => logRunZoneGuarded(app.run);
+void main() => logRunZonedGuarded(app.run);
