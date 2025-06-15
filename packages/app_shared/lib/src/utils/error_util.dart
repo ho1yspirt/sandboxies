@@ -9,7 +9,7 @@ import 'package:l/l.dart';
 /// Currently collecting to - `Firebase Crashlytics`.
 /// If service provider is changed, refactor this documentation.
 /// {@endtemplate}
-Future<void> log(
+Future<void> logError(
   Object error,
   StackTrace stackTrace, {
   String? clue,

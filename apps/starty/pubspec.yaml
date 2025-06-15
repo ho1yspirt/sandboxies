@@ -26,10 +26,12 @@ dependencies:
   # Internal
   l: ^5.0.0
   # Persistent and data
-
+  shared_preferences: ^2.5.3
   # Plugins and native
-
+  flutter_displaymode: 0.6.0
+  window_manager: ^0.5.0
   # Presentation and ui
+  material_symbols_icons: ^4.2815.1
 
   # Services integration
 

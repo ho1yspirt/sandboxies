@@ -44,11 +44,11 @@ final _options = LogOptions(
   overrideOutput: _overrideOutput,
 );
 
-/// {@template log_util.logRunZoneGuarded}
+/// {@template log_util.log_run_zoned_guarded}
 /// Method that execute given [function] inside [runZonedGuarded],
 /// which wrapped with custom log options from [_options] from [l] package
 /// {@endtemplate}
-void logRunZoneGuarded(FutureOr<void> Function() function) =>
+void logRunZonedGuarded(FutureOr<void> Function() function) =>
     l.capture<void>(() => runZonedGuarded<void>(function, l.e), _options);
 
 /// {@template logger_util.run_time_logged_sync}
@@ -94,6 +94,6 @@ Future<T> runTimeLoggedAsync<T>(
       l.i('$title${(stopwatch..stop()).elapsedMicroseconds} μs');
     }
   } else {
-    return body();
+    return await body();
   }
 }

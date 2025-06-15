@@ -24,6 +24,7 @@ dependencies:
   # persistent and data
   shared_preferences: ^2.5.3
   # plugins and native
+  window_manager: ^0.5.0
   # presentation and ui
   material_symbols_icons: ^4.2815.1
   # services integration

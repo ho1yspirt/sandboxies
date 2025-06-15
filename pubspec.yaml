@@ -23,9 +23,11 @@ dependencies:
   collection: ^1.19.1
   intl: ^0.20.2
   meta: ^1.16.0
-  # Internal
-
   # Plugins and native
+  flutter_displaymode: 0.6.0
+  window_manager: ^0.5.0
+  # Presentation and ui
+  material_symbols_icons: ^4.2815.1
 
 dev_dependencies:
   flutter_test:
