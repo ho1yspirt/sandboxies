@@ -2,12 +2,12 @@ import 'package:app_shared/src/initialization/common/exception.dart';
 import 'package:app_shared/src/initialization/common/type.dart';
 
 Future<T> initializeDependencies<T>({
-  required T Function() container,
+  required T container,
   required InitializationProcess<T> initializationProcess,
   void Function(InitializationProgress step)? onProgress,
   void Function(Object error, StackTrace stackTrace)? onError,
 }) async {
-  final dependencies = container();
+  final dependencies = container;
 
   int stepIndex = 0;
   final totalSteps = initializationProcess.length;

@@ -5,7 +5,7 @@ import 'package:app_shared/src/initialization/data/initialize_dependencies.dart'
 import 'package:flutter/widgets.dart';
 
 Future<void> initializeApp<T>({
-  required T Function() container,
+  required T container,
   required InitializationProcess<T> initializationProcess,
   required FutureOr<void> Function(T dependencies) onSuccess,
   Future<void> Function()? configuration,

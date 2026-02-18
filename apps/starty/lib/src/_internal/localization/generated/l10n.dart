@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:starty/src/_internal/localization/generated/intl/messages_all.dart';
+import 'intl/messages_all.dart';
 
 // **************************************************************************
 // Generator: Flutter Intl IDE plugin
@@ -52,6 +52,11 @@ class StartyL10n {
 
   static StartyL10n? maybeOf(BuildContext context) {
     return Localizations.of<StartyL10n>(context, StartyL10n);
+  }
+
+  /// `GN`
+  String get gn {
+    return Intl.message('GN', name: 'gn', desc: '', args: []);
   }
 }
 

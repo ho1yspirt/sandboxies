@@ -41,3 +41,5 @@ flutter:
 
 flutter_intl:
   enabled: true
+  output_dir: /
+  arb_dir: /

@@ -72,7 +72,7 @@ Future<void> run() => utils.runTimeLoggedAsync(() async {
   await initialization.loadLibrary();
   await initialization.initializeApp(
     configuration: _confifure,
-    container: () => container,
+    container: container,
     initializationProcess: initializationProcesss,
     splash: StartySplash(initProgress: initProgress),
     onProgress: (progress) {

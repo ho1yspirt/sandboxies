@@ -30,9 +30,6 @@
 # Obfuscation related
 **app.*.map.json
 
-# FVM Version Cache
-**.fvm/
-**.fvmrc
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -49,3 +46,8 @@
 # **config/
 # TODO (Amir Asake): Sometimes intl generates l10n in root dir. Fix this, then delete "lib/"
 /lib/
+
+# FVM Version Cache
+.fvm/
+**.fvm/
+**.fvmrc
