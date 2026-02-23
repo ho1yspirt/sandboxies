@@ -39,16 +39,14 @@ String? Function(LogMessage event)? get _overrideOutput {
   return null;
 }
 
-final _options = LogOptions(
-  outputInRelease: false,
-  overrideOutput: _overrideOutput,
-);
+final _options = LogOptions(outputInRelease: false, overrideOutput: _overrideOutput);
 
 /// {@template log_util.log_run_zoned_guarded}
 /// Method that execute given [function] inside [runZonedGuarded],
 /// which wrapped with custom log options from [_options] from [l] package
 /// {@endtemplate}
 void logRunZonedGuarded(FutureOr<void> Function() function) =>
+    // ignore: experimental_member_use
     l.capture<void>(() => runZonedGuarded<void>(function, l.e), _options);
 
 /// {@template logger_util.run_time_logged_sync}
@@ -76,10 +74,7 @@ T runTimeLoggedSync<T>(T Function() body, {String? name}) {
 ///
 /// Uses [kDebugMode] from foundation package, and [l] from l package.
 /// {@endtemplate}
-Future<T> runTimeLoggedAsync<T>(
-  Future<T> Function() body, {
-  String? name,
-}) async {
+Future<T> runTimeLoggedAsync<T>(Future<T> Function() body, {String? name}) async {
   if (kDebugMode) {
     final stopwatch = Stopwatch()..start();
     try {
