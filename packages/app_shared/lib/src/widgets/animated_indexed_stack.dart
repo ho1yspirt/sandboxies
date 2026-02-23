@@ -5,22 +5,12 @@ import 'package:flutter/material.dart';
 /// AnimatedIndexedStackTransitionBuilder.
 /// {@endtemplate}
 typedef AnimatedIndexedStackTransitionBuilder =
-    Widget Function(
-      BuildContext context,
-      Animation<double> animation,
-      Widget child,
-    );
+    Widget Function(BuildContext context, Animation<double> animation, Widget child);
 
 /// Default value of [AnimatedIndexedStackTransitionBuilder] for [AnimatedIndexedStack] widget.
-Widget _defaultTransitionBuilder(
-  BuildContext context,
-  Animation<double> primary,
-  Widget child,
-) {
+Widget _defaultTransitionBuilder(BuildContext context, Animation<double> primary, Widget child) {
   final tween = Tween<Offset>(begin: const Offset(0, .01), end: Offset.zero);
-  final animation = CurveTween(
-    curve: Curves.easeInOutCubicEmphasized,
-  ).animate(primary);
+  final animation = CurveTween(curve: Curves.easeInOutCubicEmphasized).animate(primary);
   return SlideTransition(
     position: animation.drive(tween),
     child: FadeTransition(opacity: animation, child: child),
@@ -49,26 +39,18 @@ class AnimatedIndexedStack extends StatefulWidget {
   State<AnimatedIndexedStack> createState() => _AnimatedIndexedStackState();
 }
 
-/// State for widget AnimatedNavigatorStack.
 class _AnimatedIndexedStackState extends State<AnimatedIndexedStack>
     with SingleTickerProviderStateMixin {
   late final AnimationController _incomingController;
   late Animation<double> _incomingAnimation;
   late int _currentIndex;
 
-  /* #region Lifecycle */
   @override
   void initState() {
     super.initState();
-    // Initial state initialization
-    _incomingController = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    );
-    _incomingAnimation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(_incomingController);
+
+    _incomingController = AnimationController(vsync: this, duration: widget.duration);
+    _incomingAnimation = Tween<double>(begin: 0, end: 1).animate(_incomingController);
     _currentIndex = widget.index;
     // Initial tab should be visible immediately
     _incomingController.value = 1.0;
@@ -87,10 +69,9 @@ class _AnimatedIndexedStackState extends State<AnimatedIndexedStack>
   @override
   void dispose() {
     _incomingController.dispose();
-    // Permanent removal of a tree stent
+
     super.dispose();
   }
-  /* #endregion */
 
   @override
   Widget build(BuildContext context) {
@@ -102,14 +83,15 @@ class _AnimatedIndexedStackState extends State<AnimatedIndexedStack>
       ),
     );
 
-    // dart format off
-    return Stack(children: widget.children.mapIndexed(
-      (index, child) => widget._transitionBuilder(
-        context,
-        _incomingAnimation,
-        childBuilder(index == _currentIndex, child),
-      ),
-    ).toList());
-    // dart format on
+    final children = widget.children
+        .mapIndexed(
+          (index, child) => widget._transitionBuilder(
+            context,
+            _incomingAnimation,
+            childBuilder(index == _currentIndex, child),
+          ),
+        )
+        .toList();
+    return Stack(children: children);
   }
 }

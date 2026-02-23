@@ -1,0 +1,452 @@
+{
+	"scope": {
+		"prefix": [
+			"scope",
+			"inheritedScopeWidget"
+		],
+		"description": "Inherited Scope Widget",
+		"body": [
+			"import 'package:flutter/material.dart';",
+				"import 'package:nested/nested.dart';\n",
+				"/// {@template ${2:$TM_FILENAME_BASE}}",
+				"/// ${1:${TM_FILENAME_BASE/(.)(.*)(_scope)/${1:/upcase}${2:/camelcase}/}}Scope widget.",
+				"/// {@endtemplate}",
+				"class ${1}Scope extends SingleChildStatelessWidget {",
+				"  /// {@macro ${2}}",
+				"  const ${1}Scope({super.key, required this.dependencies, super.child});\n",
+				"  final ${3:${1}Dependencies} dependencies;\n",
+				"  static ${3} of(BuildContext context) => _${1}Scope.of(context);\n",
+				"  @override",
+				"  Widget buildWithChild(BuildContext context, Widget? child) {",
+				"    assert(child != null, 'Must specify a child.');\n",
+				"    return _${1}Scope(dependencies: dependencies, child: child!);",
+				"  }",
+				"}\n",
+				"class _${1}Scope extends InheritedWidget {",
+				"  const _${1}Scope({super.key, required this.dependencies, required super.child});",
+				"  final ${3} dependencies;\n",
+				"  static _${1}Scope? _maybeOf(BuildContext context) =>",
+				"    context.getElementForInheritedWidgetOfExactType<_${1}Scope>()?.widget as _${1}Scope?;",
+				"  static Never _notFoundInheritedWidgetOfExactType() => throw ArgumentError('Out of scope');\n",
+				"  static _${1}Scope _of(BuildContext context) =>",
+				"    _maybeOf(context) ?? _notFoundInheritedWidgetOfExactType();\n",
+				"  static ${3} of(BuildContext context) => _of(context).dependencies;\n",
+				"  @override",
+				"  bool updateShouldNotify(_${1}Scope oldWidget) => false;",
+				"}",
+		]
+	},
+	"static Dependencies of context Method": {
+		"prefix": [
+			"staticDependenciesOf",
+			"staticdependenciesof",
+		],
+		"description": "Static Dependencies of context method for Inherited Model Widget",
+		"body": [
+			"static ${1:AppDependencies} ${2:app}Of(BuildContext context) =>",
+			"      _of(context).dependencies.${2:app};"
+		]
+	},
+	"macro class": {
+		"prefix": "macroClass",
+		"description": "Generate macro class",
+		"body": [
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.",
+			"/// {@endtemplate}",
+			"final class ${1} {",
+			"  /// {@macro ${2}}",
+			"  const ${1}();",
+			"}"
+		]
+	},
+	"data class": {
+		"prefix": "dataClass",
+		"description": "Generate data class",
+		"body": [
+			"// ignore_for_file: sort_constructors_first\n",
+			"import 'dart:convert';\n",
+			"import 'package:json_annotation/json_annotation.dart';\n",
+			"part '${2:$TM_FILENAME_BASE}.g.dart';\n",
+			"/// {@template ${2}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.",
+			"/// {@endtemplate}",
+			"@JsonSerializable()",
+			"final class ${1} {",
+			"  /// {@macro ${2}}",
+			"  const ${1}();\n",
+			"/// Generate class from Map\\<String, Object?>",
+			"factory ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}}.fromJson(Map<String, Object?> json) => _$${1}FromJson(json);\n",
+			"/// Generate Map\\<String, Object?> from class",
+			"Map<String, Object?> toJson() => _$${1}ToJson(this);\n",
+			"/// Generate class from String",
+			"factory ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}}.fromRawJson(String rawJson) => ${1}.fromJson(json.decode(rawJson) as Map<String, Object?>);\n",
+			"/// Generate String from class",
+			"String toRawJson() => json.encode(toJson());\n",
+			"}"
+		]
+	},
+	"json": {
+		"prefix": [
+			"json",
+			"fromJson",
+			"toJson",
+			"rawjson",
+			"fromRawJson",
+			"toRawJson"
+		],
+		"description": "Generate JSON methods in class.",
+		"body": [
+			"/// Generate class from Map\\<String, Object?>",
+			"factory ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}}.fromJson(Map<String, Object?> json) => _$${1}FromJson(json);\n",
+			"/// Generate Map\\<String, Object?> from class",
+			"Map<String, Object?> toJson() => _$${1}ToJson(this);\n",
+			"/// Generate class from String",
+			"factory ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}}.fromRawJson(String rawJson) => ${1}.fromJson(json.decode(rawJson) as Map<String, Object?>);\n",
+			"/// Generate String from class",
+			"String toRawJson() => json.encode(toJson());\n"
+		]
+	},
+	"enumeration": {
+		"prefix": "enum",
+		"description": "Create new enumeration",
+		"body": [
+			"import 'package:json_annotation/json_annotation.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} Enumeration.",
+			"/// {@endtemplate}",
+			"enum ${1} implements Comparable<${1}> {",
+			"  /// ${3}",
+			"  ${3:a}('${3}'),\n",
+			"  /// ${4}",
+			"  ${4:b}('${4}'),\n",
+			"  /// ${5}",
+			"  ${5:c}('${5}');\n",
+			"  /// {@macro ${2}}",
+			"  const ${1}(this.value);${0}\n",
+			"  /// Creates new instance of [${1}] from given string.",
+			"  factory ${1}.from(String? value, {${1}? fallback}) =>",
+			"    switch (value) {",
+			"      '${3}' => ${3},",
+			"      '${4}' => ${4},",
+			"      '${5}' => ${5},",
+			"      _ => fallback ?? (throw ArgumentError.value(value)),",
+			"  };\n",
+			"  /// Value of the enum",
+			"  final String value;\n",
+			"  /// Pattern matching",
+			"  T map<T>({",
+			"    required T Function() ${3},",
+			"    required T Function() ${4},",
+			"    required T Function() ${5},",
+			"  }) => switch (this) {",
+			"      ${1}.${3} => ${3}(),",
+			"      ${1}.${4} => ${4}(),",
+			"      ${1}.${5} => ${5}(),",
+			"  };\n",
+			"  /// Pattern matching",
+			"  T maybeMap<T>({",
+			"    required T Function() orElse,",
+			"    T Function()? ${3},",
+			"    T Function()? ${4},",
+			"    T Function()? ${5},",
+			"  }) =>",
+			"      map<T>(",
+			"        ${3}: ${3} ?? orElse,",
+			"        ${4}: ${4} ?? orElse,",
+			"        ${5}: ${5} ?? orElse,",
+			"      );\n",
+			"  /// Pattern matching",
+			"  T? maybeMapOrNull<T>({",
+			"    T Function()? ${3},",
+			"    T Function()? ${4},",
+			"    T Function()? ${5},",
+			"  }) =>",
+			"      maybeMap<T?>(",
+			"        orElse: () => null,",
+			"        ${3}: ${3},",
+			"        ${4}: ${4},",
+			"        ${5}: ${5},",
+			"      );\n",
+			"  @override",
+			"  int compareTo(${1} other) => index.compareTo(other.index);\n",
+			"  @override",
+			"  String toString() => value;",
+			"}\n",
+			"/// {@template ${2}.string_converter}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} Converter.",
+			"/// {@endtemplate}",
+			"final class ${1}StringConverter implements JsonConverter<${1}, String?> {",
+			"  /// {@macro ${2}.string_converter}",
+			"  const ${1}StringConverter();\n",
+			"@override",
+			"${1} fromJson(String? json) => ${1}.from(json);",
+			"@override",
+			"String? toJson(${1} object) => object.value;",
+			"}",
+		]
+	},
+	"part": {
+		"prefix": "part",
+		"description": "Part of file",
+		"body": [
+			"part '${TM_FILENAME_BASE}.g.dart';$0"
+		]
+	},
+	"remote datasource": {
+		"prefix": [
+			"datasource",
+			"remoteDatasource",
+		],
+		"description": "Datasource Object",
+		"body": [
+			"import 'package:dio/dio.dart';",
+			"import 'package:retrofit/retrofit.dart';\n",
+			"part 'auth_remote_datasource.g.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.",
+			"/// {@endtemplate}",
+			"abstract interface class ${1} {}\n",
+			"/// {@macro ${2}}",
+			"@RestApi()",
+			"abstract class ${1}Impl implements ${1} {",
+			"  /// {@macro ${2}}",
+			"  factory ${1}Impl(",
+			"    Dio dio, {",
+			"    String? baseUrl,",
+			"    ParseErrorLogger? errorLogger,",
+			"  }) = _${1}Impl;\n",
+			"}\n",
+		]
+	},
+	"repository": {
+		"prefix": [
+			"repo",
+			"repository"
+		],
+		"description": "Repository Object",
+		"body": [
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(repository)/${1:/upcase}${2:/camelcase}/}}Repository.",
+			"/// {@endtemplate}",
+			"abstract interface class ${1}Repository {",
+			"}\n",
+			"/// {@macro ${2}}",
+			"final class ${1}RepositoryImpl implements ${1}Repository {",
+			"  /// {@macro ${2}}",
+			"  const ${1}RepositoryImpl(",
+			"    ${1}LocalDatasource localDatasource,",
+			"    ${1}RemoteDatasource remoteDatasource,",
+			"  ) : _localDatasource = localDatasource, _remoteDatasource = remoteDatasource;\n",
+			"  final ${1}LocalDatasource _localDatasource;",
+			"  final ${1}RemoteDatasource _remoteDatasource;",
+			"}\n",
+		]
+	},
+	"interface class": {
+		"prefix": "interfaceclass",
+		"description": "Snipper for class with interface and constructor",
+		"body": [
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"///  Interface for ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.",
+			"/// {@endtemplate}",
+			"abstract interface class ${1} {",
+			"}\n",
+			"/// {@template ${2}}",
+			"/// ${1}",
+			"/// {@endtemplate}",
+			"final class ${1}Impl implements ${1} {",
+			"  /// {@macro ${2}}",
+			"  const ${1}Impl();",
+			"}\n",
+		],
+	},
+	"rethrow": {
+		"prefix": [
+			"rethrow",
+			"tryrethrow",
+		],
+		"description": "Snippet for try catch block with rethrow inside catch",
+		"body": [
+			"try {",
+			"} catch (error, stackTrace) {",
+			"  rethrow;",
+			"}",
+		],
+	},
+	"inh": {
+		"prefix": [
+			"inh",
+			"inheritedWidget"
+		],
+		"description": "Inherited Widget",
+		"body": [
+			"import 'package:flutter/material.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget.",
+			"/// {@endtemplate}",
+			"class ${1} extends InheritedWidget {",
+			"  /// {@macro $2}",
+			"  const ${1}({",
+			"    super.key,",
+			"    required super.child,",
+			"  });\n",
+			"  @override",
+			"  bool updateShouldNotify(${1} oldWidget) => false;${0}",
+			"}\n"
+		]
+	},
+	"stl": {
+		"prefix": [
+			"stl",
+			"statelessWidget"
+		],
+		"description": "Snippet for Stateless Widget",
+		"body": [
+			"import 'package:flutter/material.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget.",
+			"/// {@endtemplate}",
+			"class $1 extends StatelessWidget {",
+			"  /// {@macro $2}",
+			"  const $1({super.key});\n",
+			"  @override",
+			"  Widget build(BuildContext context) => const Placeholder();${0}",
+			"}\n"
+		]
+	},
+	"stl child": {
+		"prefix": [
+			"stlChild",
+			"statelessWidgetWithChild"
+		],
+		"description": "Snippet for Stateless Widget with child",
+		"body": [
+			"import 'package:flutter/material.dart';\n\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget.",
+			"/// {@endtemplate}",
+			"class $1 extends StatelessWidget {",
+			"  /// {@macro $2}",
+			"  const $1({super.key, required this.child});\n",
+			"  /// The widget below this widget in the tree.",
+			"  final Widget child;\n",
+			"  @override",
+			"  Widget build(BuildContext context) => child;${0}",
+			"}\n"
+		]
+	},
+	"stf": {
+		"prefix": [
+			"stf",
+			"statefulWidget"
+		],
+		"description": "Snippet for Stateful Widget",
+		"body": [
+			"import 'package:flutter/material.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget.",
+			"/// {@endtemplate}",
+			"class ${1} extends StatefulWidget {",
+			"  /// {@macro $2}",
+			"  const ${1}({super.key});\n",
+			"  @override",
+			"  State<${1}> createState() => _${1}State();",
+			"}\n",
+			"class _${1}State extends State<${1}> {\n",
+			"  @override",
+			"  Widget build(BuildContext context) => const Placeholder();${0}",
+			"}\n"
+		]
+	},
+	"stf child": {
+		"prefix": [
+			"stfChild",
+			"statefulWidgetWithChild"
+		],
+		"description": "Snippet for Stateful Widget",
+		"body": [
+			"import 'package:flutter/material.dart';\n",
+			"/// {@template ${2:$TM_FILENAME_BASE}}",
+			"/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget.",
+			"/// {@endtemplate}",
+			"class ${1} extends StatefulWidget {",
+			"  /// {@macro $2}",
+			"  const ${1}({super.key, required this.child});\n",
+			"  /// The widget below this widget in the tree.",
+			"  final Widget child;\n",
+			"  @override",
+			"  State<${1}> createState() => _${1}State();",
+			"}\n",
+			"class _${1}State extends State<${1}> {\n",
+			"  @override",
+			"  Widget build(BuildContext context) => widget.child;${0}",
+			"}\n"
+		]
+	},
+	"stopwatch": {
+		"prefix": "stopwatch",
+		"description": "Stopwatch",
+		"body": [
+			"final stopwatch = Stopwatch()..start();",
+			"try {",
+			"} finally {",
+			"  print(",
+			"    '${(stopwatch..stop()).elapsedMicroseconds} μs',",
+			"  );",
+			"}"
+		]
+	},
+	"comment": {
+		"prefix": [
+			"cmnt",
+			"comment"
+		],
+		"description": "Comment block",
+		"body": "// --- ${1} --- //\n\n$0"
+	},
+	"divider": {
+		"prefix": [
+			"dvd",
+			"divider_comment"
+		],
+		"description": "Divider comment line",
+		"body": "\n//* --- ${1} --- *//$0"
+	},
+	"dartdoc new template": {
+		"prefix": [
+			"@template",
+			"template",
+			"dartdoc-new-template",
+			"doc-new-macro",
+			"newtmpl",
+			"@doc-template"
+		],
+		"description": "Creates a new dartdoc template with current file's name as its prefix",
+		"body": [
+			"/// {@template ${1:$TM_FILENAME_BASE}}",
+			"/// ${0:Body of the template}",
+			"/// {@endtemplate}"
+		]
+	},
+	"dartdoc use macro": {
+		"prefix": [
+			"@macro",
+			"macro",
+			"dartdoc-use-template",
+			"doc-use-macro",
+			"usetmpl",
+			"@doc-macro"
+		],
+		"description": "Uses existing dartdoc macro with current file's name as its prefix",
+		"body": "/// {@macro ${0:$TM_FILENAME_BASE}}"
+	},
+	"deprecated": {
+		"prefix": [
+			"@deprecated",
+			"deprecated"
+		],
+		"description": "Deprecated",
+		"body": "@Deprecated('${0:Reason}')"
+	},
+}

@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/symbols.dart';
 
 Widget _defaultProgressIndicator(BuildContext context) => const Center(
-  child: Padding(
-    padding: EdgeInsets.symmetric(vertical: 8),
-    child: CircularProgressIndicator(),
-  ),
+  child: Padding(padding: EdgeInsets.symmetric(vertical: 8), child: CircularProgressIndicator()),
 );
 
 Widget _defaultErrorBuilder(BuildContext context) => const Center(
-  child: Padding(
-    padding: EdgeInsets.symmetric(vertical: 8),
-    child: Icon(Symbols.error_rounded),
-  ),
+  child: Padding(padding: EdgeInsets.symmetric(vertical: 8), child: Icon(Icons.error_rounded)),
 );
 
 /// {@template paginated_list_view}
@@ -61,20 +54,18 @@ class PaginatedListView extends StatefulWidget {
   State<PaginatedListView> createState() => _PaginatedListViewState();
 }
 
-/// State for widget PaginatedListView.
 class _PaginatedListViewState extends State<PaginatedListView> {
-  /* #region Lifecycle */
   @override
   void initState() {
     super.initState();
-    // Initial state initialization
+
     widget.controller.addListener(_onScroll);
   }
 
   @override
   void didUpdateWidget(covariant PaginatedListView oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Widget configuration changed,
+
     if (widget.controller != oldWidget.controller) {
       oldWidget.controller.removeListener(_onScroll);
       widget.controller.addListener(_onScroll);
@@ -84,10 +75,9 @@ class _PaginatedListViewState extends State<PaginatedListView> {
   @override
   void dispose() {
     widget.controller.removeListener(widget.onScrollEnd);
-    // Permanent removal of a tree stent
+
     super.dispose();
   }
-  /* #endregion */
 
   /// Handles scroll events and triggers [onScrollEnd] if threshold is met.
   void _onScroll() {

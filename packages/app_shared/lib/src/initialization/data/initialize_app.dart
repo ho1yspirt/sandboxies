@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:app_shared/src/initialization/common/type.dart';
+import 'package:app_shared/src/initialization/core/type.dart';
 import 'package:app_shared/src/initialization/data/initialize_dependencies.dart';
 import 'package:flutter/widgets.dart';
 

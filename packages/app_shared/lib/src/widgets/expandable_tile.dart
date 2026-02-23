@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/symbols.dart';
 
 /// {@template expandable_tile}
 /// ExpandableTile widget.
@@ -12,8 +11,8 @@ class ExpandableTile extends StatefulWidget {
     required this.children,
     this.initiallyExpanded = false,
     this.minTileHeight = 56,
-    this.expandedIcon = Symbols.arrow_drop_up_rounded,
-    this.collapsedIcon = Symbols.arrow_drop_down_rounded,
+    this.expandedIcon = Icons.arrow_drop_up_rounded,
+    this.collapsedIcon = Icons.arrow_drop_down_rounded,
     this.tilePadding = const EdgeInsets.symmetric(horizontal: 16.0),
     this.childrenPadding = EdgeInsets.zero,
   });
@@ -31,24 +30,15 @@ class ExpandableTile extends StatefulWidget {
   State<ExpandableTile> createState() => _ExpandableTileState();
 }
 
-/// State for widget ExpandableTile.
 class _ExpandableTileState extends State<ExpandableTile> {
-  late bool _isExpanded;
-  /* #region Lifecycle */
-  @override
-  void initState() {
-    super.initState();
-    // Initial state initialization
-    _isExpanded = widget.initiallyExpanded;
-  }
-  /* #endregion */
+  late bool _isExpanded = widget.initiallyExpanded;
 
   @override
   Widget build(BuildContext context) => Column(
     mainAxisSize: MainAxisSize.min,
     children: [
       InkWell(
-        onTap: _toggleExpanded,
+        onTap: _onTapExpand,
         customBorder: const StadiumBorder(),
         child: ConstrainedBox(
           constraints: BoxConstraints(minHeight: widget.minTileHeight),
@@ -66,15 +56,15 @@ class _ExpandableTileState extends State<ExpandableTile> {
             ),
           ),
         ),
-      ), // dart format off
-      if (_isExpanded)
-      Padding(
-        key: ValueKey(_isExpanded),
-        padding: widget.childrenPadding,
-        child: Column(children: widget.children),
       ),
-    ],  // dart format on
+      if (_isExpanded)
+        Padding(
+          key: ValueKey(_isExpanded),
+          padding: widget.childrenPadding,
+          child: Column(children: widget.children),
+        ),
+    ],
   );
 
-  void _toggleExpanded() => setState(() => _isExpanded = !_isExpanded);
+  void _onTapExpand() => setState(() => _isExpanded = !_isExpanded);
 }

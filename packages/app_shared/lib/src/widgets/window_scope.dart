@@ -2,7 +2,6 @@ import 'dart:io' as io;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/symbols.dart';
 import 'package:window_manager/window_manager.dart';
 
 /// {@template window_scope}
@@ -21,13 +20,9 @@ class WindowScope extends StatefulWidget {
 
 class _WindowScopeState extends State<WindowScope> {
   @override
-  Widget build(BuildContext context) =>
-      kIsWeb || io.Platform.isAndroid || io.Platform.isIOS
+  Widget build(BuildContext context) => kIsWeb || io.Platform.isAndroid || io.Platform.isIOS
       ? widget.child
-      : Stack(
-          alignment: Alignment.topCenter,
-          children: [widget.child, const _WindowTitle()],
-        );
+      : Stack(alignment: Alignment.topCenter, children: [widget.child, const _WindowTitle()]);
 }
 
 class _WindowTitle extends StatefulWidget {
@@ -114,29 +109,19 @@ class _Buttons extends StatelessWidget {
           builder: (context, isAlwaysOnTop, _) {
             return _Button(
               onPressed: () => setAlwaysOnTop(!isAlwaysOnTop),
-              icon: Icon(Symbols.push_pin_rounded, fill: isAlwaysOnTop ? 1 : 0),
+              icon: Icon(Icons.push_pin_rounded, fill: isAlwaysOnTop ? 1 : 0),
             );
           },
         ),
-        _Button(
-          onPressed: windowManager.minimize,
-          icon: const Icon(Symbols.minimize_rounded),
-        ),
+        _Button(onPressed: windowManager.minimize, icon: const Icon(Icons.minimize_rounded)),
         ValueListenableBuilder(
           valueListenable: _isFullScreenNotifier,
           builder: (_, isFullScreen, _) => _Button(
             onPressed: () => windowManager.setFullScreen(!isFullScreen),
-            icon: Icon(
-              isFullScreen
-                  ? Symbols.fullscreen_exit_rounded
-                  : Symbols.fullscreen_rounded,
-            ),
+            icon: Icon(isFullScreen ? Icons.fullscreen_exit_rounded : Icons.fullscreen_rounded),
           ),
         ),
-        _Button(
-          onPressed: windowManager.close,
-          icon: const Icon(Symbols.close_rounded),
-        ),
+        _Button(onPressed: windowManager.close, icon: const Icon(Icons.close_rounded)),
       ],
     ),
   );
