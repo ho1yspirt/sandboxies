@@ -21,7 +21,7 @@ dependencies:
   meta:
   # Monorepository shared packages
   app_shared:
-    path: ../../packages/app_shared
+    path: ../../package/app_shared
   # Internal.
   l:
   # Platform-dependant (Plugins).
