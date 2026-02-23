@@ -1,0 +1,45 @@
+name: sandboxy
+description: "A test site of sandboxies monorepository."
+publish_to: "none"
+version: 0.0.1+1
+
+environment:
+  sdk: ^3.11.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Dart.
+  async:
+  collection:
+  intl:
+  meta:
+  # Monorepository shared packages
+  app_shared:
+    path: ../../packages/app_shared
+  # Internal.
+  l:
+  # Platform-dependant (Plugins).
+  flutter_displaymode:
+  window_manager:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+
+flutter:
+  uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  use_deferred_loading: false
+  class_name: SanboxyL10n
+  main_locale: en
+  arb_dir: lib/src/_core/localization/l10n
+  output_dir: lib/src/_core/localization/generated

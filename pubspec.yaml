@@ -7,6 +7,7 @@ environment:
 
 workspace:
   # Applications.
+  - apps/sandboxy
 
   # Packages.
   - packages/app_shared
@@ -18,8 +19,10 @@ dependencies:
     sdk: flutter
 
   # Dart.
-  collection: 1.19.1
-  meta: 1.17.0
+  async: ^2.13.0
+  collection: ^1.19.1
+  intl: ^0.20.2
+  meta: ^1.17.0
   # Internal.
   l: 5.0.1
   # Platform-dependant (Plugins).
