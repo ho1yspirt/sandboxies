@@ -7,10 +7,10 @@ environment:
 
 workspace:
   # Applications.
-  - apps/sandboxy
+  - app/sandboxy
 
   # Packages.
-  - packages/app_shared
+  - package/app_shared
 
 dependencies:
   flutter:

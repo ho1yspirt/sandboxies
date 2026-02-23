@@ -2,72 +2,66 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Starty dev (debug)",
+            "name": "Sandboxy dev (debug)",
             "request": "launch",
             "type": "dart",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         },
         {
-            "name": "Starty dev (profile)",
+            "name": "Sandboxy dev (profile)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         },
         {
-            "name": "Starty dev (release)",
+            "name": "Sandboxy dev (release)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         },
         {
-            "name": "Starty (debug)",
+            "name": "Sandboxy (debug)",
             "request": "launch",
             "type": "dart",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         },
         {
-            "name": "Starty (profile)",
+            "name": "Sandboxy (profile)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         },
         {
-            "name": "Starty (release)",
+            "name": "Sandboxy (release)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            "program": "apps/starty/lib/main.dart",
+            "program": "apps/sandboxy/lib/main.dart",
             "args": [
-                "--target",
-                "lib/main.dart",
+                "--target lib/main.dart",
                 "--dart-define-from-file=config/dev.json"
             ]
         }
